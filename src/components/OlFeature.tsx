@@ -7,7 +7,7 @@ import { FeatureLike } from "ol/Feature";
 
 interface Props {
   feature: Feature;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export function OlFeature({ feature, onClick }: Props) {
@@ -20,7 +20,7 @@ export function OlFeature({ feature, onClick }: Props) {
       const f = map.forEachFeatureAtPixel(e.pixel, (feature) => {
         return feature;
       });
-      if (f === feature) {
+      if (f === feature && onClick) {
         onClick();
       }
     };

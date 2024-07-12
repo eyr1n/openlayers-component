@@ -17,7 +17,12 @@ function App() {
   });
 
   return (
-    <OlMap map={map}>
+    <OlMap
+      map={map}
+      onClick={() => {
+        alert("feature以外をクリック");
+      }}
+    >
       <OlLayer layer={new Tile({ source: new OSM() })}></OlLayer>
       <OlLayer layer={new VectorLayer({ source: new VectorSource() })}>
         <OlFeature
