@@ -12,7 +12,7 @@ interface Props {
 
 export function OlFeature({ feature, onClick }: Props) {
   const map = useOlMap();
-  const layer = useOlLayer<VectorLayer<FeatureLike>>(VectorLayer<FeatureLike>);
+  const layer = useOlLayer(VectorLayer<FeatureLike>);
 
   useEffect(() => {
     layer.getSource()?.addFeature(feature);
